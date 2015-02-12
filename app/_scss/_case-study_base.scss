@@ -1,0 +1,333 @@
+//  =============================================================================
+//  Layout
+//  =============================================================================
+
+
+
+//  =============================================================================
+//  Typography
+//  =============================================================================
+  
+  
+
+  ul, ol {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Blockquotes
+  // --------------------------------------------------
+    .testimonial {
+      text-align: center;
+      padding: 30px;
+      margin: 0;
+
+      @include media-min-smaller {
+        padding: 2em 30px;
+      }
+
+      @include media-min-small {
+        padding: 4em 50px;
+      }
+
+      @include media-min-medium {
+        padding: 6em 70px;
+      }
+
+      .container {
+        max-width: 30em;
+        margin: 0 auto;
+
+        @include media-min-medium {
+          max-width: 50em;
+        }
+      }
+
+      p {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: $white;
+        margin-top: 0;
+        max-width: none;
+
+        @include media-min-smaller {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include media-min-medium {
+          font-size: 2.25rem;
+        }
+
+        &:before {
+          content: open-quote;
+          color: rgba($white, 0.5);
+        }
+
+        &:after {
+          content: close-quote;
+          color: rgba($white, 0.5);
+        }
+
+      }
+
+      footer {
+        font-family: $sans;
+
+        .name {
+          font-size: 1.25rem;
+          font-weight: 500;
+        }
+        .details {
+          color: rgba($white, 0.5);
+        }
+      }
+    }
+
+    // Team quote
+    .quote {
+      margin: 1em 0 2em;
+      padding: 0;
+      
+      p {
+        font-style: italic;
+        max-width: 650px;
+        margin-bottom: 1em;
+
+        @include media-min-small {
+          text-align: center;
+        }
+      }
+      
+      footer {
+        display: block;
+        font-family: $sans;
+        position: relative;
+        
+        @include media-min-small {
+          margin: 1em auto;
+          text-align: center;
+        }
+        
+        span {
+          font-size: 0.8rem;
+          line-height: 1.25;
+          
+          
+          @include media-min-small {
+            font-size: 1rem;
+          }
+          
+          &.headshot,
+          &.author {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          
+          &.headshot {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            
+            @include media-min-small {
+              margin-right: 10px; 
+            }
+          }
+          
+          &.name, &.title {
+            display: block;
+            text-align: left;
+          }
+          
+          &.title {
+            font-size: 0.65rem;
+            font-weight: 500;
+            
+            @include media-min-small {
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+
+  // Sections
+  //------------------------------------------------
+  section {
+    header {
+      padding: 1em 0 0;
+
+      @include media-min-small {
+        padding: 2em 0 0;
+      }
+
+      @include media-min-medium {
+        padding: 3.5em 0 0;
+      }
+
+      .title, p {
+        @include media-min-small {
+          text-align: center;
+        }
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 1.2rem;
+        letter-spacing: -0.005em;
+        margin: 0 auto 1em;
+        
+        @include media-min-small {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  // Browser
+  // --------------------------------------------------
+  .browser {
+    background: #f3f7fa;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 0 5px rgba(black, 0.1);
+    overflow: hidden;
+
+    @include media-min-smaller {
+      box-shadow: 0 0 8px rgba(black, 0.1);
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  // Flexslidin'
+  // --------------------------------------------------
+  .flex-control-nav {
+    text-align: center;
+    padding: 1.5em 0;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      margin: 0 5px;
+      width: 10px;
+      height: 10px;
+      background: rgba($white, 0.4);
+      border-radius: 50%;
+      text-indent: -9999px;
+
+      &.flex-active {
+        background: $white;
+      }
+    }
+  }
+
+  // Case study footer
+  // --------------------------------------------------
+  footer.case-study {
+    font-family: $sans;
+
+    .container {
+
+    }
+  }
+
+  .case-study-card {
+    padding: 4em 30px;
+    text-align: center;
+
+    small {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.5;
+      display: block;
+      margin: 0 0 5px;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 600;
+      max-width: 600px;
+      line-height: 1.2;
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 2em auto;
+      max-width: 500px;
+    }
+
+    .button {
+      background: $white;
+      color: $orange;
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    &.cbt {
+      background: url('/img/cbt/bg-pixels.jpg') #286eac center center / cover no-repeat;
+      color: $white;
+
+      p {
+        color: rgba($white, 0.65);
+      }
+    }
+
+    &.stax {
+      background: url('/img/stax/45s.jpg') #222 center center / cover no-repeat;
+      color: $white;
+
+      .title {
+        color: #fed819;
+      }
+    }
+
+    &.oca {
+      background: url('/img/oca/bg-hero.jpg') #fff top center / cover no-repeat;
+      color: #545454;
+
+      .title {
+        color: #5c8aae;
+      }
+
+      .button {
+        color: #5c8aae;
+      }
+    }
+
+    &.grooveshark {
+      background: url('/img/grooveshark/sketches.svg') #2b3232 top center / cover no-repeat;
+      color: $white;
+      position: relative;
+
+      &:after {
+        background: #2b3232;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.75;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .title {
+        color: $orange;
+      }
+    }
+  }

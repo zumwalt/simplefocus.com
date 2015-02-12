@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="290px" height="586px" viewBox="0 0 290 586" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2 (9964) - http://www.bohemiancoding.com/sketch -->
+    <title>phone</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-2" sketch:type="MSArtboardGroup" transform="translate(-99.000000, -165.000000)">
+            <g id="phone" sketch:type="MSLayerGroup" transform="translate(99.000000, 165.000000)">
+                <path d="M49.9971843,0 C22.3845019,0 0,22.389715 0,49.9936666 L0,536.006333 C0,563.617073 22.3942557,586 49.9971843,586 L240.002816,586 C267.615498,586 290,563.610285 290,536.006333 L290,49.9936666 C290,22.3829269 267.605744,0 240.002816,0 L49.9971843,0 Z M11.9960073,57 C10.3413581,57 9,58.3518126 9,60.0087046 L9,510.991295 C9,512.652957 10.3401146,514 11.9960073,514 L279.003993,514 C280.658642,514 282,512.648187 282,510.991295 L282,60.0087046 C282,58.3470429 280.659885,57 279.003993,57 L11.9960073,57 Z" id="Rectangle-12" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                <g id="Rectangle-14-+-Rectangle-15" transform="translate(113.000000, 25.000000)" fill="#ECF0F1" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-14" x="0" y="0" width="9" height="9" rx="40"></rect>
+                    <rect id="Rectangle-15" x="20" y="2" width="45" height="5" rx="40"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

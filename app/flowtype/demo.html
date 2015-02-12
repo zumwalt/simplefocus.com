@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <title>FlowType.JS &mdash; Responsive web typography at its finest: font-size and line-height based on element width.</title>
+   <link rel="shortcut icon" href="img/flowtype.png">
+
+   <!-- TypeKit -->
+   <script type="text/javascript" src="//use.typekit.net/kyt5kjs.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+   <!-- CSS Links -->
+   <link rel="stylesheet" href="css/demo.css">
+
+   <!-- Font Links -->
+   <link rel="stylesheet" href="http://fonts.typotheque.com/WF-013635-001161.css" type="text/css" />
+   
+   <!-- JS Links -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+   <script src="js/plugins-ck.js"></script>
+</head>
+
+<body>
+   <header>
+      <a href="index.html" id="branding"><img src="img/demo-logo.png" alt=""></a>
+      <nav>
+         <a href="#">Sample</a>
+         <a href="#">Nav</a>
+         <a href="#">Links</a>               
+      </nav>
+   </header>
+
+   <div id="tagline">
+      <h2>This is a text heavy page that has been created to show the performance and capabilities of <a href="index.html">FlowType.JS</a>.</h2>
+      <p>This page is running several instances of FlowType.JS.<br>Resize your browser to watch the magic.</p>
+   </div>
+
+   <div class="newspaper">
+      <div class="side-stories">
+         <div class="navigation">
+            <h2>Navigation</h2>
+
+            <div class="nav-item">
+               <h3><a href="#">Consectetur</a></h3>
+            </div>
+
+            <div class="nav-item">
+               <h3><a href="#">Tortor</a></h3>
+            </div>
+
+            <div class="nav-item">
+               <h3><a href="#">Euismod</a></h3>
+            </div>
+
+            <div class="nav-item">
+               <h3><a href="#">Tristique</a></h3>
+            </div>
+
+            <div class="nav-item">
+               <h3><a href="#">Bibendum</a></h3>
+            </div>
+
+            <div class="nav-item">
+               <h3><a href="#">Nullam</a></h3>
+            </div>
+         </div>
+
+         <div class="links">
+            <h2>Links</h2>
+
+            <div class="story">
+               <h3><a href="http://simplefocus.com" target="_blank">Simple Focus</a></h3>
+               <p>Memphis Web Design and User Expreience...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://simplefocus.com/news/entry/portland-office-opening/" target="_blank">Simple Focus opens satellite...</a></h3>
+               <p>Simple Focus has signed a lease for...</p>
+            </div>
+            
+            <div class="story">
+               <h3><a href="index.html" target="_blank">FlowType.JS</a></h3>
+               <p>Web typography at its finest: font-size...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://trentwalton.com/2012/06/19/fluid-type/" target="_blank">Fluid Type</a></h3>
+               <p>Embracing the fluid &amp; flexible...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://webtypography.net/Rhythm_and_Proportion/Horizontal_Motion/2.1.2/" target="_blank">Comfortable Measure</a></h3>
+               <p>"Anything from 45 to 75 characters...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://webtypography.net/" target="_blank">Web Typography</a></h3>
+               <p>A practical guide to web typography...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://tympanus.net/codrops/2013/08/06/creative-link-effects/" target="_blank">Creative Link Effects</a></h3>
+               <p>Today we’d like to share some experimental...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://simplefocus.com" target="_blank">Simple Focus</a></h3>
+               <p>Memphis Web Design and User Expreience...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://simplefocus.com/news/entry/portland-office-opening/" target="_blank">Simple Focus opens satellite...</a></h3>
+               <p>Simple Focus has signed a lease for...</p>
+            </div>
+            
+            <div class="story">
+               <h3><a href="index.html" target="_blank">FlowType.JS</a></h3>
+               <p>Web typography at its finest: font-size...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://trentwalton.com/2012/06/19/fluid-type/" target="_blank">Fluid Type</a></h3>
+               <p>Embracing the fluid &amp; flexible...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://webtypography.net/Rhythm_and_Proportion/Horizontal_Motion/2.1.2/" target="_blank">Comfortable Measure</a></h3>
+               <p>"Anything from 45 to 75 characters...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://webtypography.net/" target="_blank">Web Typography</a></h3>
+               <p>A practical guide to web typography...</p>
+            </div>
+
+            <div class="story">
+               <h3><a href="http://tympanus.net/codrops/2013/08/06/creative-link-effects/" target="_blank">Creative Link Effects</a></h3>
+               <p>Today we’d like to share some experimental...</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="main-article">
+         <h3 id="article-top">What does it do?</h3>
+         <p>Ideally, the most legible typography contains <a href="http://webtypography.net/Rhythm_and_Proportion/Horizontal_Motion/2.1.2/" target="_blank">between 45 and 75 characters per line</a>. This is difficult to accomplish for <em>all</em> screen widths with only CSS media-queries. FlowType.JS eases this difficulty by changing the font-size <del>and subsequently the line-height</del> based on a specific element's width. This allows for a perfect character count per line at <em>any</em> screen width.</p>
+         
+         <h3>What about options?</h3>
+         <p>Additional options allow you to configure FlowType.JS to fit your needs. These options include element size thresholds, font-size thresholds and ratios. The element size thresholds will stop FlowType.JS from performing its magic once the element reaches beyond specific pixel dimensions. The font-size thresholds will stop FlowType.JS from resizing the text beyond certain font-sizes. Lastly, you have full control over the base font-size, so that you can set your typography perfectly.</p>         
+
+         <h3>Is there more magic?</h3>
+         <p>Behind the scenes, yes. FlowType.JS has been engineered for each instance to run separately. You will still need to "eye-ball" to make sure the font-size is where you want it to be. The benefit comes into play when you set your thresholds; each instance is not dependant on a parent instance. This makes your typography size up and down perfectly within your limits without affecting other elements.</p>
+
+         <h3>Are there any catches?</h3>
+         <p>There is <em>one</em> catch: when using FlowType.JS, it will only perform it's magic on the element and child elements that are specified in the closing document's call. For example, if you have <span class="code">&lt;p&gt;</span> inside of an <span class="code">&lt;article&gt;</span> and you apply FlowType.JS to <span class="code">&lt;p&gt;</span>, it will only update <span class="code">&lt;p&gt;</span> and not <span class="code">&lt;article&gt;</span>. But, if you apply FlowType.JS to <span class="code">&lt;article&gt;</span>, the entire contents including <span class="code">&lt;p&gt;</span> will be updated. We believe that this can be used to your advantage. So, tweak and change as you feel necessary.</p>
+
+         <h3>Next Steps</h3>
+         <p>FlowType.JS is extremely easy to use. Visit the <a href="index.html#getting-started">getting started</a> section on the FlowType.JS page, follow the four easy steps and you will be on well on your way to performing magic.</p>
+      </div>
+
+      <div class="featured-article">
+         <h2>Favorites</h2>
+         <h3><a href="http://sass-lang.com/" target="_blank">SASS</a></h3>
+         <p>Sass makes CSS fun again. Sass is an extension of CSS3, adding nested rules, variables, mixins, selector inheritance, and more. It’s translated to.... <a href="http://sass-lang.com/" target="_blank">Read More</a></p>
+
+         <h3><a href="http://smacss.com/" target="_blank">SMACSS</a></h3>
+         <p>SMACSS (pronounced “smacks”) is more style guide than rigid framework. There is no library within here for you to download or install. SMACSS is a... <a href="http://smacss.com/" target="_blank">Read More</a></p>
+
+         <h3><a href="http://css-tricks.com/sass-style-guide/" target="_blank">Sass Style Guide</a></h3>
+         <p>With more people than ever writing in Sass, it bears some consideration how we format it. CSS style guides are common, so perhaps we can extend.... <a href="http://css-tricks.com/sass-style-guide/" target="_blank">Read More</a></p>
+
+         <h3><a href="http://fittextjs.com/" target="_blank">FitText</a></h3>
+         <p>FitText makes font-sizes flexible. Use this plugin on your fluid or responsive layout to achieve scalable headlines that fill the width of a parent element. <a href="http://fittextjs.com/" target="_blank">Read More</a></p>
+
+         <h3><a href="http://letteringjs.com/" target="_blank">Lettering.js</a></h3>
+         <p>Web type is exploding all over the web but CSS currently doesn't offer complete down-to-the-letter control. So we created a jQuery plugin to give you that... <a href="http://letteringjs.com/" target="_blank">Read More</a></p>
+
+         <h3><a href="http://sass-lang.com/" target="_blank">SASS</a></h3>
+         <p>Sass makes CSS fun again. Sass is an extension of CSS3, adding nested rules, variables, mixins, selector inheritance, and more. It’s translated to.... <a href="http://sass-lang.com/" target="_blank">Read More</a></p>
+
+         <h3><a href="http://smacss.com/" target="_blank">SMACSS</a></h3>
+         <p>SMACSS (pronounced “smacks”) is more style guide than rigid framework. There is no library within here for you to download or install. SMACSS is a... <a href="http://smacss.com/" target="_blank">Read More</a></p>
+
+         <h3><a href="http://css-tricks.com/sass-style-guide/" target="_blank">Sass Style Guide</a></h3>
+         <p>With more people than ever writing in Sass, it bears some consideration how we format it. CSS style guides are common, so perhaps we can extend.... <a href="http://css-tricks.com/sass-style-guide/" target="_blank">Read More</a></p>
+
+         <h3><a href="http://fittextjs.com/" target="_blank">FitText</a></h3>
+         <p>FitText makes font-sizes flexible. Use this plugin on your fluid or responsive layout to achieve scalable headlines that fill the width of a parent element. <a href="http://fittextjs.com/" target="_blank">Read More</a></p>
+      </div>
+   </div>
+
+   <div id="tagline">
+      <h2>Print designers love <a href="index.html">FlowType.JS</a>.</h2>
+      <p>It's almost like your text will change size <em>as if it were an image</em>.</p>
+   </div>
+
+   <div class="newspaper">
+      <div class="half-article">
+         <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.</p>
+         <p>Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+         <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+         <p>Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+      </div>
+      <div class="quarter-article-a">
+         <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.</p>
+         <p>Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+         <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+         <p>Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+      </div>
+      <div class="quarter-article-b">
+         <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.</p>
+         <p>Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+         <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+         <p>Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+      </div>
+   </div>
+
+   <div id="tagline">
+      <h2>Is that enough <a href="index.html">FlowType.JS</a> for you?</h2>
+      <p>We don't believe so quite yet. Here's some more examples:</p>
+   </div>
+
+   <div class="newspaper">
+      <div class="triad">
+         <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.</p>
+         <p>Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+         <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+         <p>Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+      </div>
+      <div class="triad">
+         <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.</p>
+         <p>Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+         <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+         <p>Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+      </div>
+      <div class="triad-last">
+         <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.</p>
+         <p>Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.</p>
+         <p>Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+         <p>Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis.</p>
+         <p>Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+      </div>
+   </div>
+
+   <div id="tagline">
+      <h2><a href="index.html">FlowType.JS</a> is a beast at handling text.</h2>
+      <p>We know you want it to end, so here's one last example:</p>
+   </div>
+
+   <div class="newspaper">
+      <div class="large-article">
+         <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+         <p>Vestibulum id ligula porta felis euismod semper. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+         <p>Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui.</p>
+         <p>Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.</p>
+      </div>
+   </div>
+
+   <footer>
+		<p>
+			<!--How did this plugin come to be? <a href="story.html" id="learn-more">Read the story</a>.<br> -->
+		FlowType.js is a <a href="#"><img src="img/logo.png" alt="simple focus logo" id="sf-logo" /></a> experiment.</p>
+		<p>FlowType.JS is licensed under the <a rel="license" href="http://choosealicense.com/licenses/mit/">MIT License</a>. See the license.txt file in the <a href="http://github.com/simplefocus/flowtype.js">source code</a> for copy permission.</p>
+	</footer>
+   
+   <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-43189138-1', 'simplefocus.com');
+	  ga('send', 'pageview');
+	
+	</script>
+   <script src="js/app-ck.js"></script>
+</body>
+
+</html>

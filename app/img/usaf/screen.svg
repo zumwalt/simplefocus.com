@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200px" height="682px" viewBox="0 0 1200 682" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9977) - http://www.bohemiancoding.com/sketch -->
+    <title>Screen 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-2" sketch:type="MSArtboardGroup" transform="translate(-2135.000000, -1050.000000)">
+            <g id="Screen-2" sketch:type="MSLayerGroup" transform="translate(2135.000000, 1050.000000)">
+                <rect id="Rectangle-1" stroke="#282828" stroke-width="40" fill="#000000" sketch:type="MSShapeGroup" x="100" y="0" width="1000" height="600" rx="9"></rect>
+                <rect id="Rectangle-6" fill="#1C1C1C" sketch:type="MSShapeGroup" x="180" y="588" width="60" height="20"></rect>
+                <rect id="Rectangle-6" fill="#1C1C1C" sketch:type="MSShapeGroup" x="960" y="588" width="60" height="20"></rect>
+                <rect id="Rectangle-5" fill="#3F3F3F" sketch:type="MSShapeGroup" x="17" y="596" width="1166" height="20" rx="4"></rect>
+                <rect id="Rectangle-2" fill="#292929" sketch:type="MSShapeGroup" x="0" y="602" width="1200" height="80" rx="9"></rect>
+                <path d="M649,641 C649,636.581722 652.579909,633 657.005466,633 L1140.99453,633 C1145.41583,633 1149,636.590712 1149,641 L1149,641 C1149,645.418278 1145.42009,649 1140.99453,649 L657.005466,649 C652.584169,649 649,645.409288 649,641 L649,641 Z" id="Rectangle-7" fill="#141414" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

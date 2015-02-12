@@ -1,0 +1,349 @@
+// =============================================================================
+// Simple Focus Styles
+// John Wilson
+// Version 0.1
+// Created June 18, 2013
+// ============================================================================= 
+
+// Imports
+      @import "compass";                  // Compass
+      @import "compass/reset";            // Compass Reset
+      @import "ie.scss";                  // IE Styles
+
+
+//  888     888     d8888 8888888b.  8888888        d8888 888888b.   888      8888888888 .d8888b.  
+//  888     888    d88888 888   Y88b   888         d88888 888  "88b  888      888       d88P  Y88b 
+//  888     888   d88P888 888    888   888        d88P888 888  .88P  888      888       Y88b.      
+//  Y88b   d88P  d88P 888 888   d88P   888       d88P 888 8888888K.  888      8888888    "Y888b.   
+//   Y88b d88P  d88P  888 8888888P"    888      d88P  888 888  "Y88b 888      888           "Y88b. 
+//    Y88o88P  d88P   888 888 T88b     888     d88P   888 888    888 888      888             "888 
+//     Y888P  d8888888888 888  T88b    888    d8888888888 888   d88P 888      888       Y88b  d88P 
+//      Y8P  d88P     888 888   T88b 8888888 d88P     888 8888888P"  88888888 8888888888 "Y8888P"  
+
+
+   // Sizes
+      $breakpoint:   768px;
+
+   // Colors
+      $black:        #000000;
+      $gray:         #333333;
+      $body:         #eff3f3;
+      $white:        #ffffff;
+
+      $blue:         #3498db;
+      $green:        #2ecc71;
+      $main:         #2c3e50;
+      $navy:         #141f2b;
+      $red:          #e74c3c;
+      $teal:         #19bc9c;
+
+
+//  888888b.         d8888  .d8888b.  8888888888 
+//  888  "88b       d88888 d88P  Y88b 888        
+//  888  .88P      d88P888 Y88b.      888        
+//  8888888K.     d88P 888  "Y888b.   8888888    
+//  888  "Y88b   d88P  888     "Y88b. 888        
+//  888    888  d88P   888       "888 888        
+//  888   d88P d8888888888 Y88b  d88P 888        
+//  8888888P" d88P     888  "Y8888P"  8888888888 
+
+      * {
+         @include box-sizing(border-box);
+      }
+      a {
+         color: $teal;
+         text-decoration: none;
+         // @include transition(all,0.15s);
+      }
+      body {
+         background: $body;
+         color: $main;
+         font-family: "adelle", Georgia, "Times New Roman", Times, serif;
+         font-size: 20px;
+         font-weight: 300;
+         line-height: 29px;
+      }
+      h1,h2,h3,h4,h5,h6,p {
+         font-family: inherit;
+         font-size: inherit;
+         margin: 3% 0;
+      }
+      h1,h2,h3,h4 {
+         font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      h1 {
+         font-size: 3.7em;
+         font-style: bold;
+         font-weight: 900;
+         line-height: 1em;
+         padding-bottom: 3%;
+      }
+      h2 {
+         font-size: 2.5em;
+         font-weight: 900;
+         line-height: 1em;
+         @media (max-width: $breakpoint) {
+            font-size: 1.5em;
+         }
+      }
+      h3 {
+         font-size: 1.5em;
+         line-height: 1em;
+         margin-bottom: 3%;
+         @media (max-width: $breakpoint) {
+            font-size: 1.4em;
+         }
+      }
+      h4 {
+         border-bottom: 1px rgba(0,0,0,0.25) solid;
+         font-size: 1em;
+         letter-spacing: 2px;
+         line-height: 1em;
+         padding-bottom: 2%;
+         text-transform: uppercase;
+      }
+      p {
+         @media (max-width: $breakpoint) {
+            font-size: 0.8em;
+            line-height: 1.5em;
+         }
+      }
+      em {
+         font-style: italic;
+      }
+
+//  888b     d888  .d88888b.  8888888b.  888     888 888      8888888888 .d8888b.  
+//  8888b   d8888 d88P" "Y88b 888  "Y88b 888     888 888      888       d88P  Y88b 
+//  88888b.d88888 888     888 888    888 888     888 888      888       Y88b.      
+//  888Y88888P888 888     888 888    888 888     888 888      8888888    "Y888b.   
+//  888 Y888P 888 888     888 888    888 888     888 888      888           "Y88b. 
+//  888  Y8P  888 888     888 888    888 888     888 888      888             "888 
+//  888   "   888 Y88b. .d88P 888  .d88P Y88b. .d88P 888      888       Y88b  d88P 
+//  888       888  "Y88888P"  8888888P"   "Y88888P"  88888888 8888888888 "Y8888P"  
+
+
+      footer {
+         background: $main;
+         color: $white;
+         padding: 4% 25% 3%;
+         @media (max-width: $breakpoint) {
+            padding: 5% 8% 4%;
+            br {
+               display: none;
+            }
+         }
+         a {
+            color: $teal;
+            font-weight: 900;
+            text-decoration: none;
+            @include transition(all,0.15s);
+            &:hover {
+               @include opacity(0.8);
+            }
+            &:active {
+               @include opacity(0.5);
+            }
+         }
+         p {
+            margin: 0 0 1%;
+            text-align: center;
+            @media (max-width: $breakpoint) {
+               text-align: left;
+            }
+         }
+         #sf-logo {
+            bottom: 1px;
+            display: inline;
+            margin: 0 0.2%;
+            position: relative;
+            vertical-align: middle;
+            width: 18%;
+            @media (max-width: $breakpoint) {
+               width: 105px;
+            }
+         }
+      }
+      header {
+         border-bottom: 1px darken($body,7%) solid;
+         margin: 0 auto;
+         overflow: hidden;
+         padding: 1.5% 10% 1%;
+         width: 100%;
+      }
+      nav {
+         float: right;
+         margin-top: 1.5%;
+         text-align: right;
+         width: 80%;
+         a {
+            color: $main;
+            display: inline-block;
+            padding: 1% 3%;
+            @include border-radius(5px);
+            @include transition(all,0.15s);
+            &:hover {
+               background: $teal;
+               color: $body;
+            }
+            &:active {
+               background: darken($teal,5%);
+            }
+         }
+      }
+      #branding {
+         display: block;
+         float: left;
+         margin-bottom: 1%;
+         width: 7%;
+         @media (max-width: $breakpoint) {
+            margin-top: 1%;
+            width: 10%;
+         }
+         img {
+            display: block;
+            width: 100%;
+         }
+      }
+      .newspaper {
+         border-bottom: 1px darken($body,7%) solid;
+         overflow: hidden;
+         padding: 4% 10%;
+         .featured-article {
+            float: right;
+            padding-left: 2%;
+            width: 25%;
+            h3 {
+               margin-top: 7%;
+            }
+            @media (max-width: $breakpoint) {
+               display: none;
+            }
+         }
+         .half-article {
+            float: left;
+            padding-right: 1%;
+            width: 50%;
+            @media (max-width: $breakpoint) {
+               float: none;
+               padding: 0;
+               width: 100%;
+            }
+         }
+         .main-article {
+            float: left;
+            width: 55%;
+            @media (max-width: $breakpoint) {
+               float: none;
+               padding: 0;
+               width: 100%;
+            }
+            h3 {
+               font-weight: 900;
+            }
+            #article-top {
+               margin-top: 0;
+            }
+         }
+         .quarter-article-a {
+            float: left;
+            margin-top: 1%;
+            padding: 0 1%;
+            width: 25%;
+            @media (max-width: $breakpoint) {
+               float: none;
+               padding: 0;
+               width: 100%;
+            }
+         }
+         .quarter-article-b {
+            float: right;
+            margin-top: 1%;
+            padding: 0 0 0 1%;
+            width: 25%;
+            @media (max-width: $breakpoint) {
+               float: none;
+               padding: 0;
+               width: 100%;
+            }
+         }
+         .side-stories {
+            float: left;
+            padding-right: 2%;
+            width: 20%;
+            @media (max-width: $breakpoint) {
+               float: none;
+               padding: 0;
+               width: 100%;
+            }
+            h2 {
+               margin-bottom: 10%;
+            }
+            .navigation {
+               @media (max-width: $breakpoint) {
+                  display: none;
+               }
+               .nav-item {
+                  border-bottom: 1px darken($body,7%) solid;
+                  margin-bottom: 5%;
+                  padding-bottom: 1%;
+                  &:last-child {
+                     border-bottom: none;
+                     margin-bottom: 20%;
+                  }
+               }
+            }
+            .links {
+               @media (max-width: $breakpoint) {
+                  display: none;
+               }
+               .story {
+                  border-bottom: 1px darken($body,7%) solid;
+                  margin-bottom: 5%;
+                  padding-bottom: 1%;
+                  &:last-child {
+                     border-bottom: none;
+                  }
+               }
+            }            
+         }
+         .triad {
+            float: left;
+            padding: 0 1%;
+            width: 33.3333%;
+            @media (max-width: $breakpoint) {
+               float: none;
+               padding: 0;
+               width: 100%;
+            }
+         }
+         .triad-last {
+            float: right;
+            padding: 0 1%;
+            width: 33.3334%;
+            @media (max-width: $breakpoint) {
+               float: none;
+               padding: 0;
+               width: 100%;
+            }
+         }
+      }
+      #tagline {
+         background: darken($body,7%);
+         clear: both;
+         border-bottom: 1px darken($body,7%) solid;
+         padding: 2% 10%;
+         text-align: center;
+         @media (max-width: $breakpoint) {
+            br {
+               display: none;
+            }
+         }
+      }
+
+
+
+
+
+
+
+

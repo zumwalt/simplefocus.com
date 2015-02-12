@@ -1,0 +1,136 @@
+---
+layout: flowtype
+title: Flowtype | Simple Focus
+---
+
+    <header>
+      <h1 id="branding">FlowType<span class="teal">.JS</span></h1>
+      <a href="http://github.com/simplefocus/FlowType.JS" class="download">Download from GitHub</a>
+      <p class="tagline">Web typography at its finest: font-size <del>and line-height</del> based on <em>element</em> width.</p>
+    </header>
+
+    <div class="demo">
+      <div id="demo-wrap">
+        <img src="img/browser-nav.png" alt="" id="browser-nav" />
+        <img src="img/browser-tools.png" alt="" id="browser-tools" class="png" />
+        <img src="img/browser-top.png" alt="" id="browser-top" />
+        <div class="demo-article">
+          <h3>What does FlowType.JS do?</h3>
+          <p>Ideally, the most legible typography contains <a href="http://webtypography.net/Rhythm_and_Proportion/Horizontal_Motion/2.1.2/" target="_blank">between 45 and 75 characters per line</a>. This is difficult to accomplish for <em>all</em> screen widths with only CSS media-queries. FlowType.JS eases this difficulty by changing the font-size <del>and subsequently the line-height</del> based on a specific element's width. This allows for a perfect character count per line at <em>any</em> screen width.</p>
+          <p>Additional options, <a href="#options">reviewed below</a>, allow you to configure FlowType.JS to fit your needs. These options include element size thresholds, font-size thresholds and ratios. The element size thresholds will stop FlowType.JS from performing its magic once the element reaches beyond specific pixel dimensions. The font-size thresholds will stop FlowType.JS from resizing the text beyond certain font-sizes. Lastly, you have full control over the base font-size, so that you can set your typography perfectly.</p>
+          <p>FlowType.JS is extremely easy to use. Visit the <a href="#getting-started">getting started</a> section, follow the four easy steps and you will be on well on your way to performing magic.</p>
+        </div>
+      </div>
+      <div id="demo-control"></div>
+      <div id="control-hint">
+        <div id="hint-triangle"></div>
+        <p>Drag to watch the type change.</p>
+      </div>
+    </div>
+
+    <!-- Mobile Article -->
+    <div class="mobile-article">
+      <h3>What does FlowType.JS do?</h3>
+      <p>Ideally, the most legible typography contains <a href="http://webtypography.net/Rhythm_and_Proportion/Horizontal_Motion/2.1.2/" target="_blank">between 45 and 75 characters per line</a>. This is difficult to accomplish for <em>all</em> screen widths with only CSS media-queries. FlowType.JS eases this difficulty by changing the font-size <del>and subsequently the line-height</del> based on a specific element's width. This allows for a perfect character count per line at <em>any</em> screen width.</p>
+    </div>
+
+    <div class="options" id="options">
+      <h2>Options</h2>
+      <div class="thresholds">
+        <h3>Thresholds</h3>
+        <p>Set minimum and maximum width thresholds to control the FlowType.JS magic within specific element widths.</p>
+        <p>In this example, FlowType.JS will stop resizing text once the element width becomes smaller than 500px or larger than 1200px.</p>
+        <p class="codeblock">
+          <span class="blue">$</span>(<span class="green">'body'</span>).flowtype({<br>
+          <span class="indent">&nbsp;</span>minimum : <span class="red">500</span>,<br>
+          <span class="indent">&nbsp;</span>maximum : <span class="red">1200</span><br>
+          });
+        </p>
+        <p>Set minimum and maximum font-size thresholds to control the FlowType.JS magic within specific font sizes.</p>
+        <p>In this example, FlowType.JS will stop resizing text once the font-size becomes smaller than 12px or larger than 40px.</p>
+        <p class="codeblock">
+          <span class="blue">$</span>(<span class="green">'body'</span>).flowtype({<br>
+          <span class="indent">&nbsp;</span>minFont : <span class="red">12</span>,<br>
+          <span class="indent">&nbsp;</span>maxFont : <span class="red">40</span><br>
+          });
+        </p>
+      </div>
+      <div class="font-line">
+        <h3>Font-size <del>and line-height</del></h3>
+        <p>Set your own font-size using the <span class="code">fontRatio</span> variable. When using <span class="code">fontRatio</span>, increase the value to make the font smaller (and vice verse).</p>
+        <p class="note"><em>Note:</em> Because each font is different, you will need to tweak <span class="code">fontSize</span> and eyeball your final product to make sure that your character count is within the recommended range.</p>
+        <p><del>Line-height (<span class="code">lineRatio</span>) is set based on the <span class="code">fontRatio</span> size, and defaults to 1.45 (the recommended line-height for maximum legibility).</del> &nbsp;See <em>line-height</em> below.</p>
+        <p class="codeblock">
+          <span class="blue">$</span>(<span class="green">'body'</span>).flowtype({<br>
+          <span class="indent">&nbsp;</span>fontRatio : <span class="red">30</span><br>
+          });
+        </p>
+        <br>
+        <h3>Line-height</h3>
+        <p>In v1.0 of FlowType, we made the plugin set a specific line-height in pixels. We received many statements that setting a specific line-height is very dangerous. So, what did we do? We removed support for line-height in v1.1.</p>
+        <p>What do I do now? It's quite simple: use unitless line-height in your CSS. It will make automatically make changes based on whatever the font-size. Here's an example of what we suggest for <span class="code">line-height</span>:</p>
+        <p class="codeblock">fontRatio : <span class="red">30</span>;</p>
+      </div>
+    </div>
+
+    <div class="getting-started" id="getting-started">
+      <h2>Getting Started</h2>
+      <div class="step1">
+        <h3><span class="teal">Step 1:</span> Set Typography Base</h3>
+        <p>Prepare for FlowType.JS by making sure that the typography is flexible. Start with this CSS and make changes as necessary:</p>
+        <p class="codeblock">
+          <span class="blue">body</span> {<br>
+          <span class="indent">&nbsp;</span>font-size: <span class="red">18px</span>;<br>
+          }<br>
+          <span class="blue">h1,h2,h3,h4,h5,h6,p</span> {<br>
+          <span class="indent">&nbsp;</span>line-height: <span class="red">1.45</span>;<br>
+          }<br>
+          <span class="blue">h1</span> { font-size: <span class="red">4em</span>; }<br>
+          <span class="blue">h2</span> { font-size: <span class="red">3em</span>; }<br>
+          <span class="blue">h3</span> { etc...
+        </p>
+        <p class="note"><em>Note:</em> Setting a specific font-size in your CSS file will make sure that your website remains accessible in case your viewer has javascript disabled. These numbers will be overridden as FlowType.JS updates the font-size and line-height numbers inline.</p>
+      </div>
+      <div class="step2">
+        <h3><span class="teal">Step 2:</span> Download from GitHub</h3>
+        <p>Download FlowType.JS on GitHub and include both jQuery and the <span class="code">flowtype.jQuery.js</span> file in the head of your HTML document.</p>
+        <a href="http://github.com/simplefocus/FlowType.JS" class="download">Download from GitHub</a>
+      </div>
+      <div class="step3">
+        <h3><span class="teal">Step 3:</span> Call FlowType.JS</h3>
+        <p>To begin the magic, simply call FlowType.JS before the close of your body tag:</p>
+        <p class="codeblock">
+          <span class="blue">$</span>(<span class="green">'body'</span>).flowtype();
+        </p>
+      </div>
+      <div class="step4">
+        <h3><span class="teal">Step 4:</span> Make Changes</h3>
+        <p>You will most likely want to change the default settings. To do so, simply include these options in your code and tweak away:</p>
+        <p class="codeblock">
+          <span class="blue">$</span>(<span class="green">'body'</span>).flowtype({<br>
+          <span class="indent">&nbsp;</span>minimum &nbsp;&nbsp;: <span class="red">500</span>,<br>
+          <span class="indent">&nbsp;</span>maximum &nbsp;&nbsp;: <span class="red">1200</span>,<br>
+          <span class="indent">&nbsp;</span>minFont &nbsp;&nbsp;: <span class="red">12</span>,<br>
+          <span class="indent">&nbsp;</span>maxFont &nbsp;&nbsp;: <span class="red">40</span>,<br>
+          <span class="indent">&nbsp;</span>fontRatio : <span class="red">30</span><br>
+          });
+        </p>
+      </div>
+    </div>
+
+    <div class="large-demo">
+      <h3>What about performance?</h3>
+      <p>We've got that covered. Check out <a href="demo.html">this demo</a>.</p>
+    </div>
+
+    <div class="fonts">
+      <h3>What about webfonts?</h3>
+      <p>FlowType.JS works just fine with <a href="http://typekit.com" target="_blank">Typekit</a>, <a href="http://cloud.typography.com" target="_blank">Cloud.Typography</a>, <a href="http://google.com/webfonts" target="_blank">Google Webfonts</a> and any other service you can think of.</p>
+    </div>
+
+    <footer>
+      <p>
+        <!--How did this plugin come to be? <a href="story.html" id="learn-more">Read the story</a>.<br> -->
+      FlowType.js is a <a href="#"><img src="img/logo.png" alt="simple focus logo" id="sf-logo" /></a> experiment.</p>
+      <p>FlowType.JS is licensed under the <a rel="license" href="http://choosealicense.com/licenses/mit/">MIT License</a>. See the license.txt file in the <a href="http://github.com/simplefocus/flowtype.js">source code</a> for copy permission.</p>
+    </footer>

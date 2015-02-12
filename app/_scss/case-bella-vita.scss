@@ -1,0 +1,135 @@
+//  8888888 888b     d888 8888888b.   .d88888b.  8888888b. 88888888888 .d8888b.
+//    888   8888b   d8888 888   Y88b d88P" "Y88b 888   Y88b    888    d88P  Y88b
+//    888   88888b.d88888 888    888 888     888 888    888    888    Y88b.
+//    888   888Y88888P888 888   d88P 888     888 888   d88P    888     "Y888b.
+//    888   888 Y888P 888 8888888P"  888     888 8888888P"     888        "Y88b.
+//    888   888  Y8P  888 888        888     888 888 T88b      888          "888
+//    888   888   "   888 888        Y88b. .d88P 888  T88b     888    Y88b  d88P
+//  8888888 888       888 888         "Y88888P"  888   T88b    888     "Y8888P"
+
+    @import "normalize";
+    @import "variables";
+    @import "base";
+    @import "case-study_base";
+
+//  888     888     d8888 8888888b.  8888888        d8888 888888b.   888      8888888888 .d8888b.
+//  888     888    d88888 888   Y88b   888         d88888 888  "88b  888      888       d88P  Y88b
+//  888     888   d88P888 888    888   888        d88P888 888  .88P  888      888       Y88b.
+//  Y88b   d88P  d88P 888 888   d88P   888       d88P 888 8888888K.  888      8888888    "Y888b.
+//   Y88b d88P  d88P  888 8888888P"    888      d88P  888 888  "Y88b 888      888           "Y88b.
+//    Y88o88P  d88P   888 888 T88b     888     d88P   888 888    888 888      888             "888
+//     Y888P  d8888888888 888  T88b    888    d8888888888 888   d88P 888      888       Y88b  d88P
+//      Y8P  d88P     888 888   T88b 8888888 d88P     888 8888888P"  88888888 8888888888 "Y8888P"
+
+    // Colors
+    // --------------------------------------------------
+
+
+
+
+//  888888b.         d8888  .d8888b.  8888888888
+//  888  "88b       d88888 d88P  Y88b 888
+//  888  .88P      d88P888 Y88b.      888
+//  8888888K.     d88P 888  "Y888b.   8888888
+//  888  "Y88b   d88P  888     "Y88b. 888
+//  888    888  d88P   888       "888 888
+//  888   d88P d8888888888 Y88b  d88P 888
+//  8888888P" d88P     888  "Y8888P"  8888888888
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+        background: url('/img/bella-vita/bg.jpg') fixed top center repeat;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+
+//  888b     d888  .d88888b.  8888888b.  888     888 888      8888888888 .d8888b.
+//  8888b   d8888 d88P" "Y88b 888  "Y88b 888     888 888      888       d88P  Y88b
+//  88888b.d88888 888     888 888    888 888     888 888      888       Y88b.
+//  888Y88888P888 888     888 888    888 888     888 888      8888888    "Y888b.
+//  888 Y888P 888 888     888 888    888 888     888 888      888           "Y88b.
+//  888  Y8P  888 888     888 888    888 888     888 888      888             "888
+//  888   "   888 Y88b. .d88P 888  .d88P Y88b. .d88P 888      888       Y88b  d88P
+//  888       888  "Y88888P"  8888888P"   "Y88888P"  88888888 8888888888 "Y8888P"
+
+    // Header
+    // --------------------------------------------------
+    .banner {
+        position: absolute;
+        background: transparent;
+    }
+
+    //  =============================================================================
+    //  Sections
+    //  =============================================================================
+
+    section {
+        padding: 30px;
+    }
+
+    #intro {
+        padding: 30px;
+
+        @include media-min-small {
+            padding: 130px 0 100px;
+        }
+
+        h1 {
+            max-width: 200px;
+            margin: 0 auto 30px;
+
+            @include media-min-small {
+                margin-bottom: 100px;
+            }
+        }
+
+
+        p {
+            @include media-min-smaller {
+                text-align: center;
+                max-width: 630px;
+                margin: 0 auto 50px;
+            }
+
+            @include media-min-small {
+                font-size: 1.3rem;
+            }
+        }
+
+        .button {
+            display: block;
+            background: url('/img/bella-vita/button.png') no-repeat center center;
+            font-family: "Courier New", Courier, monospace;
+            color: $white;
+            padding: 25px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            text-align: center;
+            opacity: 0.9;
+            background-size: 100% 100%;
+            transition: all 0.3s ease;
+            max-width: 426px;
+            margin: 0 auto;
+            text-shadow: 0 0 2px rgba(black, 0.2);
+
+            @include media-min-smaller {
+                font-size: 1.1rem;
+                margin-top: 20px;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    #work {
+        text-align: center;
+    }

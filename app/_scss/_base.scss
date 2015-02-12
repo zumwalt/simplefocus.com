@@ -1,0 +1,596 @@
+//  888888b.         d8888  .d8888b.  8888888888
+//  888  "88b       d88888 d88P  Y88b 888
+//  888  .88P      d88P888 Y88b.      888
+//  8888888K.     d88P 888  "Y888b.   8888888
+//  888  "Y88b   d88P  888     "Y88b. 888
+//  888    888  d88P   888       "888 888
+//  888   d88P d8888888888 Y88b  d88P 888
+//  8888888P" d88P     888  "Y8888P"  8888888888
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 24px;
+      height: 100%;
+    }
+
+    body {
+      color: $text;
+      font-size: 1rem;
+      font-family: $serif;
+      line-height: 1.6;
+
+      &.fixed {
+        height: 100%;
+        overflow: hidden;
+        width: 100%;
+        position: fixed;
+        pointer-events: none;
+      }
+
+      &.disable-hover,
+      &.disable-hover * {
+        pointer-events: none !important;
+      }
+    }
+
+    h2, h3 {
+      font-family: $sans;
+    }
+
+    
+
+    h2 {
+      font-size: 1.1rem;
+      line-height: 1.2;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      
+      @include media-min-small {
+        font-size: 1.8rem;
+      }
+    }
+
+    p {
+      font-size: 0.7rem;
+      font-weight: 300;
+      max-width: 850px;
+      margin: 0 auto 2em;
+
+      @include media-min-small {
+        font-size: 1.15rem;
+      }
+    }
+
+    a {
+      color: $orange;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: $orange_light;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+    
+    %button,
+    .button,
+    button {
+      display: block;
+      padding: 15px 20px;
+      background: $orange;
+      color: $white;
+      border-radius: 3px;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+      font-family: $sans;
+      font-weight: 500;
+      font-size: 0.7rem;
+
+      @include media-min-smaller {
+        display: inline-block;
+      }
+
+      @include media-min-small {
+        font-size: 1rem;
+        padding: 15px 40px;
+      }
+     
+      
+      &:hover {
+        background: $orange_light;
+        color: $white;
+      }
+    }
+
+    // Video.js overrides
+    .vjs-control-bar, .vjs-error-display {
+      display: none;
+    }
+
+    // Instantclick
+    #instantclick-bar {
+      background: $orange;
+      z-index: 9999999;
+    }
+
+    // Header
+    // --------------------------------------------------
+    .banner {
+      background: $white;
+      z-index: 3;     
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10000;
+      overflow: visible !important;
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 8px 30px;
+        position: relative;
+
+        @include media-min-small {
+          padding: 30px 60px;
+        }
+      }
+
+      // Brand
+      .brand {
+        display: inline-block;
+        width: 120px;
+        position: relative;
+        top: 3px;
+        z-index: 3;
+
+        @include media-min-small {
+          //width: 130px;
+        }
+
+        svg {
+          max-width: 100%;
+          vertical-align: middle;
+
+          path, rect {
+            transition: all 0.3s 0.3s ease;
+          }
+        }
+      }
+
+
+      // Primary navigation
+      nav {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+
+          @include media-min-small {
+            @include vertical-center;
+            right: 50px;
+            height: auto;
+          }
+
+          @include media-min-medium {
+            right: 60px;
+          }
+
+          // control
+          .control {
+            width: 28px;
+            height: 25px;
+            padding: 5px;
+            @include vertical-center;
+            right: 25px;
+            cursor: pointer;
+            z-index: 2;
+
+            @include media-min-small {
+              display: none;
+            }
+
+            span {
+              width: 18px;
+              height: 3px;
+              background: $orange;
+              position: absolute;
+              left: 0;
+              transition: all 0.3s ease;
+
+              &:first-child {
+                top: 5px;
+                z-index: 2;
+              }
+              &:nth-child(2) {
+                top: 11px;
+                z-index: 1;
+              }
+              &:last-child {
+                bottom: 5px;
+                z-index: 2;
+              }
+            }
+          }
+
+
+
+          ul[role="navigation"] {
+            opacity: 0;
+            background: rgba($gray_darker, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: $white;
+            padding: 100px 30px 80px;
+            text-align: center;
+            overflow: auto;
+            pointer-events: none;
+            list-style: none outside none;
+            margin: 0;
+
+            @include media-max-small {
+              transition: all 0.3s 0.1s ease;
+            }
+
+            &:before {
+              content: '';
+              height: 70px;
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              background: $gray_darker;
+              background: linear-gradient(to bottom, rgba($gray_darker,1) 50%,rgba($gray_darker,0) 100%);
+              z-index: 2;
+
+              @include media-min-small {
+                display: none;
+              }
+            }
+
+            @include media-min-small {
+              opacity: 1;
+              background: transparent;
+              padding: 0;
+              position: static;
+              pointer-events: auto;
+              text-align: left;
+            }
+
+            & > li {
+
+              @include media-min-small {
+                display: inline-block;
+                margin-right: 20px;
+
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+
+              & > a {
+                font-size: .6rem;
+                letter-spacing: 0.1em;
+                font-weight: 400;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-family: $sans;
+
+                @include media-min-small {
+                  font-weight: 600;
+                }
+              }
+
+
+              &.contact {
+                @include media-max-small {
+
+                  a {
+                    color: $white;
+                    display: block;
+                    font-family: $serif;
+                    font-size: 0.9rem;
+                    line-height: 1.2;
+                    margin-bottom: 15px;
+                    text-decoration: none;
+                    text-transform: none;
+                    letter-spacing: 0;
+                    font-weight: 400;
+                  }
+                }
+
+              }
+            }
+
+            ul {
+              list-style: none outside none;
+              margin: 5px 0 30px;
+              padding: 0;
+
+              @include media-min-small {
+                display: none;
+              }
+
+              a {
+                color: $white;
+                display: block;
+                font-size: 0.9rem;
+                line-height: 1.2;
+                margin-bottom: 15px;
+                text-decoration: none;
+                font-weight: 400;
+              }
+            }
+          }
+
+
+
+      }
+
+      @include media-max-small {
+        &.open {
+          position: fixed !important;
+          top: 0;
+          left: 0;
+          pointer-events: auto;
+
+          .brand {
+            svg {
+              path, rect {
+                fill: $white;
+
+                &.focus {
+                  fill: rgba($white, 0.5);
+                }
+              }
+            }
+          }
+
+          nav {
+            .control {
+
+              span {
+                &:first-child {
+                  background: $white;
+                  transform: translateY(6px)rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                  transform: scale(0);
+                }
+
+                &:last-child {
+                  background: $white;
+                  transform: translateY(-6px)rotate(-45deg);
+                }
+              }
+
+
+            }
+
+            ul {
+              opacity: 1;
+              pointer-events: auto;
+            }
+          }
+        }
+      }
+
+
+
+      &.white {
+        @include media-min-small {
+          .brand {
+            svg {
+              path, rect {
+                fill: $white;
+
+                &.focus {
+                  fill: rgba($white, 0.5);
+                }
+              }
+            }
+          }
+
+          nav {
+            .control {
+
+              span {
+               background: $white;
+              }
+            }
+          }
+        }
+      }
+
+    } //.banner
+
+    // Hero and Scroll
+    //------------------------------------------------
+    #hero {
+      position: relative;
+
+      .scroll {
+        display: none;
+
+        @include media-min-height-small {
+          display: block;
+        }
+
+        @include media-min-small {
+          @include horizontal-center;
+          bottom: 0;
+          transition: all 0.5s ease;
+          transform: translate(-50%, -50px);
+          opacity: 0;
+          cursor: pointer;
+          padding: 15px;
+
+          @include media-min-small {
+            bottom: 50px;
+          }
+
+          &.visible {
+            opacity: 1;
+            transform: translate(-50%, 0);
+          }
+
+          i {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: $orange;
+            border-radius: 15px 15px 15px 0;
+            margin: 0 auto 40px;
+            position: relative;
+            transform: rotate(-45deg);
+            transition: all 0.3s;
+            animation: bobber-load-in 1.5s 2s 1 ease forwards, bob 1.5s infinite ease-in;
+          }
+
+          &:hover i {
+            background: $orange_light;
+          }
+
+          p {
+            font-family: $sans;
+            font-weight: 400;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+          }
+        }
+
+        
+
+        
+      }
+    }
+
+    //  =============================================================================
+    //  Forms
+    //  =============================================================================
+    .contact-frame {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s ease;
+
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    .no-pointerevents .contact-frame {
+      z-index: -1;
+
+      &.active {
+        z-index: 9;
+      }
+    }
+
+    .iframe-close {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background: $orange;
+      color: $white;
+      position: fixed;
+      top: 83px;
+      right: 20px;
+      z-index: 10;
+      text-align: center;
+      line-height: 42.5px;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 2rem;
+      transform: translateX(100px);
+      transition: all 0.2s;
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+  // 404
+  // --------------------------------------------------
+
+  .four-oh-four {
+    background: url('/img/we-broke-it.gif') top center / cover no-repeat;
+    color: $white;
+    height: 100%;
+
+    main {
+      background: rgba($gray_darker, 0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container {
+      @include vertical-center;
+      padding: 40px;
+
+      @include media-min-small {
+        right: 4rem;
+        max-width: 600px;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        line-height: 0.9;
+        font-weight: 700;
+
+        @include media-min-small {
+          font-size: 4rem;
+        }
+      }
+
+      p {
+        line-height: 1.35;
+        font-size: 1.25rem;
+        margin: 2rem auto 0;
+
+        @include media-min-small {
+          line-height: 1.1;
+          font-size: 2rem;
+        }
+      }
+
+      a {
+        color: $orange_light;
+      }
+    }
+  }
+
+  // Animations
+  //------------------------------------------------
+     @keyframes bob {
+      0%, 100% {
+        transform: translateY(0)rotate(-45deg);
+      }
+      50% {
+        transform: translateY(15px)rotate(-45deg);
+      }
+    }
+

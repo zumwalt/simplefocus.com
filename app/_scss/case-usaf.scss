@@ -1,0 +1,395 @@
+//  8888888 888b     d888 8888888b.   .d88888b.  8888888b. 88888888888 .d8888b.
+//    888   8888b   d8888 888   Y88b d88P" "Y88b 888   Y88b    888    d88P  Y88b
+//    888   88888b.d88888 888    888 888     888 888    888    888    Y88b.
+//    888   888Y88888P888 888   d88P 888     888 888   d88P    888     "Y888b.
+//    888   888 Y888P 888 8888888P"  888     888 8888888P"     888        "Y88b.
+//    888   888  Y8P  888 888        888     888 888 T88b      888          "888
+//    888   888   "   888 888        Y88b. .d88P 888  T88b     888    Y88b  d88P
+//  8888888 888       888 888         "Y88888P"  888   T88b    888     "Y8888P"
+
+    @import "normalize";
+    @import "variables";
+    @import "base";
+    @import "case-study_base";
+
+//  888     888     d8888 8888888b.  8888888        d8888 888888b.   888      8888888888 .d8888b.
+//  888     888    d88888 888   Y88b   888         d88888 888  "88b  888      888       d88P  Y88b
+//  888     888   d88P888 888    888   888        d88P888 888  .88P  888      888       Y88b.
+//  Y88b   d88P  d88P 888 888   d88P   888       d88P 888 8888888K.  888      8888888    "Y888b.
+//   Y88b d88P  d88P  888 8888888P"    888      d88P  888 888  "Y88b 888      888           "Y88b.
+//    Y88o88P  d88P   888 888 T88b     888     d88P   888 888    888 888      888             "888
+//     Y888P  d8888888888 888  T88b    888    d8888888888 888   d88P 888      888       Y88b  d88P
+//      Y8P  d88P     888 888   T88b 8888888 d88P     888 8888888P"  88888888 8888888888 "Y8888P"
+
+    // Colors
+    // --------------------------------------------------
+    $blue_darker: #090b1c;
+    $blue_dark: #101330;
+    $blue_light: #95c4db;
+
+    $blue_gray: #1e1f27;
+    $glue_gray_light: #2a3652;
+
+    $gray_light: #999999;
+
+
+
+//  888888b.         d8888  .d8888b.  8888888888
+//  888  "88b       d88888 d88P  Y88b 888
+//  888  .88P      d88P888 Y88b.      888
+//  8888888K.     d88P 888  "Y888b.   8888888
+//  888  "Y88b   d88P  888     "Y88b. 888
+//  888    888  d88P   888       "888 888
+//  888   d88P d8888888888 Y88b  d88P 888
+//  8888888P" d88P     888  "Y8888P"  8888888888
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: $blue_darker;
+      color: $white;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+
+//  888b     d888  .d88888b.  8888888b.  888     888 888      8888888888 .d8888b.
+//  8888b   d8888 d88P" "Y88b 888  "Y88b 888     888 888      888       d88P  Y88b
+//  88888b.d88888 888     888 888    888 888     888 888      888       Y88b.
+//  888Y88888P888 888     888 888    888 888     888 888      8888888    "Y888b.
+//  888 Y888P 888 888     888 888    888 888     888 888      888           "Y88b.
+//  888  Y8P  888 888     888 888    888 888     888 888      888             "888
+//  888   "   888 Y88b. .d88P 888  .d88P Y88b. .d88P 888      888       Y88b  d88P
+//  888       888  "Y88888P"  8888888P"   "Y88888P"  88888888 8888888888 "Y8888P"
+
+    // Header
+    // --------------------------------------------------
+    .banner {
+      position: absolute;
+      background: transparent;
+
+      .brand {
+       svg {
+         path, rect {
+           fill: $white;
+
+           &.focus {
+             fill: rgba($white, 0.6);
+           }
+         }
+       }
+      }
+
+      nav {
+       .control {
+         span {
+           background: $trans_white;
+         }
+       }
+      }
+
+      a {
+        color: rgba($white, 0.6);
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+
+    // Hero
+    // --------------------------------------------------
+    #hero {
+      background: $blue_darker url(/img/usaf/bg-hero.jpg) top center / cover no-repeat;
+      padding: 30px;
+
+      @include media-min-smaller {
+        padding: 70px 70px 100px;
+      }
+
+      @include media-min-small {
+        padding-top: 5em;
+      }
+
+      @include media-min-medium {
+        padding-top: 8em;
+      }
+
+      .brand {
+        display: block;
+        margin: 30px auto 40px;
+        max-width: 200px;
+
+        @include media-min-smaller {
+          max-width: 250px;
+          margin-bottom: 100px;
+          width: 100%;
+        }
+      }
+
+      h1 {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.3;
+
+        @include media-min-smaller  {
+          font-size: 1.65rem;
+          text-align: center;
+        }
+
+        @include media-min-small {
+          max-width: 1000px;
+          margin: 0 auto 1em;
+          width: 80%;
+        }
+
+        @include media-min-medium {
+          font-size: 2rem;
+        }
+      }
+
+      p {
+        color: $blue_light;
+
+        @include media-min-small {
+          text-align: center;
+        }
+      }
+    }
+
+    //  =============================================================================
+    //  Sections
+    //  =============================================================================
+
+    section {
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+
+      @include media-min-smaller {
+        padding: 40px;
+      }
+
+
+    }
+
+    // Intro
+    // --------------------------------------------------
+    #intro {
+      background: url('/img/usaf/bg-plane-blurred.jpg') top center / cover no-repeat;
+      text-align: center;
+
+      @include media-min-small {
+        padding: 70px;
+      }
+
+      &:after {
+        content: '';
+        background: url('/img/usaf/bg-plane.jpg') top center / cover no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.7s ease;
+      }
+
+      & > .container {
+        position: relative;
+        z-index: 2;
+
+        @include media-min-small {
+          width: auto;
+          margin: 0 auto;
+          opacity: 0;
+          transform: translate3d(0, 100%, 0);
+          transition: all 0.5s 0.2s ease;
+        }
+      }
+
+      .screen {
+        display: none;
+
+        @include media-min-small {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      .content {
+        @include media-min-small {
+          position: absolute;
+          top: 5.8651026%;
+          left: 11.6666667%;
+          height: 76.2463343%;
+          width: 76.6666667%;
+          color: $gray_light;
+        }
+
+        .container {
+          @include media-min-small {
+            @include absolute-center;
+          }
+        }
+      }
+
+      .loading {
+        animation: spin 2s infinite ease;
+        opacity: 0.5;
+      }
+
+      &.active {
+        &:after {
+          @include media-min-small {
+            opacity: 1;
+          }
+
+        }
+
+        & > .container {
+          @include media-min-small {
+            transform: translate3d(0,0,0);
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    // Work
+    // --------------------------------------------------
+    #work {
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      header {
+        @include media-min-small {
+          padding: 30px;
+        }
+      }
+    }
+
+    // Results
+    // --------------------------------------------------
+    #results {
+      background: $blue_dark;
+
+      .container {
+        @include media-min-small {
+          max-width: 950px;
+          margin: 0 auto;
+        }
+      }
+
+      header {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .result {
+        margin-bottom: 50px;
+        text-align: center;
+
+        @include media-min-small {
+          margin-bottom: 70px;
+          position: relative;
+          text-align: left;
+          display: flex;
+          align-items: center;
+        }
+
+        img {
+          width: 120px;
+
+          @include media-min-small {
+            float: left;
+            width: 200px;
+          }
+        }
+
+        .content {
+          @include media-min-small {
+            float: left;
+            padding: 0 30px;
+            width: calc(100% - 200px);
+          }
+
+          h3 {
+            margin-bottom: 0.25em;
+
+            @include media-min-small {
+              font-size: 1.75em;
+            }
+          }
+
+          p {
+            color: $blue_light;
+          }
+        }
+
+        &:nth-child(2) {
+          @include media-min-small {
+            .content {
+              order: 1;
+            }
+            img {
+              order: 2;
+            }
+          }
+        }
+      }
+    }
+
+    // Testimonial
+    // --------------------------------------------------
+    .testimonial {
+      background: url('/img/usaf/bg-testimonial.jpg') center center / cover no-repeat;
+
+      .name, .title {
+        color: $blue_light;
+      }
+    }
+
+    // Credits
+    // --------------------------------------------------
+    #credits {
+      color: $gray_light;
+      background: $blue_gray;
+      text-align: center;
+
+      @include media-min-small {
+        padding: 70px;
+      }
+
+      img {
+        max-width: 150px;
+        margin: 0 auto 30px;
+        display: block;
+
+        @include media-min-smaller {
+          margin: 0 10px 30px;
+          display: inline-block;
+        }
+      }
+    }
+
+    //  =============================================================================
+    //  Animations
+    //  =============================================================================
+
+    @keyframes spin {
+      90% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
+    }
