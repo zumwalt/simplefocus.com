@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="945px" height="72px" viewBox="0 0 945 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2 (9964) - http://www.bohemiancoding.com/sketch -->
+    <title>chrome</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-2" sketch:type="MSArtboardGroup" transform="translate(-469.000000, -56.000000)">
+            <g id="btol-browser" sketch:type="MSLayerGroup" transform="translate(469.000000, 47.000000)">
+                <g id="chrome" transform="translate(0.000000, 9.000000)">
+                    <circle id="Oval-1" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="20.5" cy="11.5" r="6.5"></circle>
+                    <circle id="Oval-2" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="40.5" cy="11.5" r="6.5"></circle>
+                    <circle id="Oval-3" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="60.5" cy="11.5" r="6.5"></circle>
+                    <rect id="Rectangle-18" fill="#ECF0F1" sketch:type="MSShapeGroup" x="0" y="31" width="945" height="41"></rect>
+                    <path d="M97.9959494,0 C94.1321932,0 90.0637187,2.99610022 88.9097615,6.68876336 L81,32 L207,32 L199.090239,6.68876336 C197.935832,2.99466136 193.856389,0 190.004051,0 L97.9959494,0 Z" id="Rectangle-17" fill="#ECF0F1" sketch:type="MSShapeGroup"></path>
+                    <rect id="Rectangle-19" fill="#FFFFFF" sketch:type="MSShapeGroup" x="86" y="37" width="830" height="30" rx="3"></rect>
+                    <text id="" sketch:type="MSTextLayer" font-family="Entypo" font-size="40" font-weight="normal" fill="#BDC3C7">
+                        <tspan x="14" y="62"></tspan>
+                    </text>
+                    <text id="" sketch:type="MSTextLayer" font-family="Entypo" font-size="40" font-weight="normal" fill="#BDC3C7">
+                        <tspan x="35" y="62"></tspan>
+                    </text>
+                    <text id="⟳" sketch:type="MSTextLayer" font-family="Entypo" font-size="37" font-weight="normal" fill="#BDC3C7">
+                        <tspan x="54" y="61">⟳</tspan>
+                    </text>
+                    <text id="☰" sketch:type="MSTextLayer" font-family="Entypo" font-size="37" font-weight="normal" fill="#BDC3C7">
+                        <tspan x="922" y="61">☰</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

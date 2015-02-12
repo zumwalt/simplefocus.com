@@ -1,0 +1,772 @@
+// =============================================================================
+// Simple Focus Styles
+//	John Wilson
+//	Version 0.1
+//	Created June 18, 2013
+//
+//	TABLE OF CONTENTS
+//	-----------------
+//	#
+// =============================================================================
+
+//	Imports
+		@import "compass";						// Compass
+		@import "compass/reset";			// Compass Reset
+		@import "ie.scss";						// IE Styles
+
+
+//  888     888     d8888 8888888b.  8888888        d8888 888888b.   888      8888888888 .d8888b.
+//  888     888    d88888 888   Y88b   888         d88888 888  "88b  888      888       d88P  Y88b
+//  888     888   d88P888 888    888   888        d88P888 888  .88P  888      888       Y88b.
+//  Y88b   d88P  d88P 888 888   d88P   888       d88P 888 8888888K.  888      8888888    "Y888b.
+//   Y88b d88P  d88P  888 8888888P"    888      d88P  888 888  "Y88b 888      888           "Y88b.
+//    Y88o88P  d88P   888 888 T88b     888     d88P   888 888    888 888      888             "888
+//     Y888P  d8888888888 888  T88b    888    d8888888888 888   d88P 888      888       Y88b  d88P
+//      Y8P  d88P     888 888   T88b 8888888 d88P     888 8888888P"  88888888 8888888888 "Y8888P"
+
+
+	// Sizes
+		$breakpoint:   715px;
+
+	// Colors
+		$black: 			#000000;
+		$gray: 			#333333;
+		$body: 			#eff3f3;
+		$white:			#ffffff;
+
+		$blue: 			#3498db;
+		$green: 			#2ecc71;
+		$main: 			#2c3e50;
+		$navy: 			#141f2b;
+		$red: 			#e74c3c;
+		$teal: 			#19bc9c;
+
+	// Fonts
+		$serif: "adelle", Georgia, "Times New Roman", Times, serif;
+		$sans: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+		@mixin calc($property, $expression) {
+		  #{$property}: -moz-calc(#{$expression});
+		  #{$property}: -o-calc(#{$expression});
+		  #{$property}: -webkit-calc(#{$expression});
+		  #{$property}: calc(#{$expression});
+		}
+
+
+//  888888b.         d8888  .d8888b.  8888888888
+//  888  "88b       d88888 d88P  Y88b 888
+//  888  .88P      d88P888 Y88b.      888
+//  8888888K.     d88P 888  "Y888b.   8888888
+//  888  "Y88b   d88P  888     "Y88b. 888
+//  888    888  d88P   888       "888 888
+//  888   d88P d8888888888 Y88b  d88P 888
+//  8888888P" d88P     888  "Y8888P"  8888888888
+
+		* {
+			@include box-sizing(border-box);
+		}
+		a {
+			color: $teal;
+			text-decoration: none;
+			// @include transition(all,0.15s);
+		}
+		body {
+			background: $body;
+			color: $main;
+			font-family: "adelle", Georgia, "Times New Roman", Times, serif;
+			font-size: 20px;
+			font-weight: 300;
+			line-height: 29px;
+		}
+		h1,h2,h3,h4,h5,h6,p {
+			font-family: inherit;
+			font-size: inherit;
+			margin: 3% 0;
+		}
+		h1,h2,h3,h4 {
+			font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		h1 {
+			font-size: 3.7em;
+			font-style: bold;
+			font-weight: 900;
+			line-height: 1em;
+			padding-bottom: 3%;
+		}
+		h2 {
+			font-size: 2.5em;
+			font-weight: 900;
+			line-height: 1em;
+		}
+		h3 {
+			font-size: 1.5em;
+			line-height: 1em;
+			margin-bottom: 3%;
+			@media (max-width: $breakpoint) {
+				font-size: 1.4em;
+			}
+		}
+		h4 {
+			border-bottom: 1px rgba(0,0,0,0.25) solid;
+			font-size: 1em;
+			letter-spacing: 2px;
+			line-height: 1em;
+			padding-bottom: 2%;
+			text-transform: uppercase;
+		}
+		em {
+			font-style: italic;
+		}
+
+	// Typography
+		.blue {
+			color: $blue;
+		}
+		.code {
+			background: rgba(0,0,0,0.1);
+			bottom: 2px;
+			font-family: "source-code-pro", "Courier New", Courier, monospaced;
+			font-size: 0.8em;
+			padding: 0 1%;
+			position: relative;
+			@include border-radius(5px);
+		}
+		.codeblock {
+			font-family: "source-code-pro", "Courier New", Courier, monospaced;
+			.indent {
+				display: inline-block;
+				width: 7.5%;
+			}
+		}
+		.green {
+			color: $green;
+		}
+		.note {
+			background: rgba(0,0,0,0.1);
+			padding: 5%;
+			@include border-radius(15px);
+		}
+		.red {
+			color: $red;
+		}
+		.teal {
+			color: $teal;
+		}
+		.getting-started .code {
+			background: rgba(0,0,0,0.2);
+		}
+
+
+//  888             d8888 Y88b   d88P  .d88888b.  888     888 88888888888
+//  888            d88888  Y88b d88P  d88P" "Y88b 888     888     888
+//  888           d88P888   Y88o88P   888     888 888     888     888
+//  888          d88P 888    Y888P    888     888 888     888     888
+//  888         d88P  888     888     888     888 888     888     888
+//  888        d88P   888     888     888     888 888     888     888
+//  888       d8888888888     888     Y88b. .d88P Y88b. .d88P     888
+//  88888888 d88P     888     888      "Y88888P"   "Y88888P"      888
+
+		footer,
+		header,
+		.getting-started,
+		.options {
+			clear: both;
+			overflow: hidden;
+			padding: 4% 10%;
+			@media (max-width: $breakpoint) {
+				padding: 6% 8% 7%;
+			}
+		}
+		footer {
+			background: $navy;
+			color: $white;
+			padding: 4% 25% 3%;
+			@media (max-width: $breakpoint) {
+				padding: 5% 8% 4%;
+				br {
+					display: none;
+				}
+			}
+			a {
+				color: $teal;
+				font-weight: 900;
+				text-decoration: none;
+				@include transition(all,0.15s);
+				&:hover {
+					@include opacity(0.8);
+				}
+				&:active {
+					@include opacity(0.5);
+				}
+			}
+			p {
+				margin: 0 0 1%;
+				text-align: center;
+				@media (max-width: $breakpoint) {
+					text-align: left;
+				}
+			}
+			#sf-logo {
+				bottom: 1px;
+				display: inline;
+				margin: 0 0.2%;
+				position: relative;
+				vertical-align: middle;
+				width: 18%;
+				@media (max-width: $breakpoint) {
+					width: 105px;
+				}
+			}
+		}
+		header {
+			padding: 2% 10%;
+			@media (max-width: $breakpoint) {
+				padding: 5% 8%;
+			}
+			.download {
+				float: right;
+				margin-top: 4%;
+				@media (max-width: $breakpoint) {
+					float: none;
+					margin: 2% 0;
+				}
+			}
+		}
+		.clearfix {
+			clear: both;
+			content: "";
+			display: block;
+			height: 20px;
+			width: 100%;
+			@media (max-width: $breakpoint) {
+				height: 1px;
+			}
+		}
+		.download {
+			display: inline-block;
+		}
+		.fonts {
+			background: $main;
+			margin: 0;
+			padding: 4% 20% !important;
+			text-align: center;
+			@media (max-width: $breakpoint) {
+				padding: 7% 8% !important;
+				text-align: left;
+			}
+			h3 {
+				color: $white;
+				margin: 0 0 2%;
+				padding: 0;
+			}
+			p {
+				color: $white;
+				font-size: 1.2em;
+				line-height: 1.45em;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				@media (max-width: $breakpoint) {
+					text-align: left;
+				}
+				a {
+					color: $teal;
+					&:hover {
+						color: lighten($teal,5%);
+					}
+					&:active {
+						color: darken($teal,5%);
+					}
+				}
+			}
+		}
+		.font-line,
+		.thresholds,
+		.step1,
+		.step2,
+		.step3,
+		.step4 {
+			width: 50%;
+			@media (max-width: $breakpoint) {
+				width: 100%;
+			}
+			.download {
+				margin: 0 0 5%;
+			}
+		}
+		.font-line,
+		.step2,
+		.step3,
+		.step4 {
+			float: right;
+			padding-left: 2%;
+			@media (max-width: $breakpoint) {
+				float: none;
+				padding: 4% 0;
+			}
+		}
+		.thresholds,
+		.step1 {
+			float: left;
+			padding-right: 2%;
+			@media (max-width: $breakpoint) {
+				float: none;
+				padding: 4% 0;
+			}
+		}
+		.getting-started {
+			background: $main;
+			color: $body;
+			padding-bottom: 5%;
+		}
+		.large-demo {
+			background: $teal;
+			margin: 0;
+			padding: 4% 10% !important;
+			text-align: center;
+			@media (max-width: $breakpoint) {
+				padding: 7% 8% !important;
+				text-align: left;
+			}
+			h3 {
+				color: $white;
+				margin: 0 0 2%;
+				padding: 0;
+			}
+			p {
+				color: $white;
+				font-size: 1.2em;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				@media (max-width: $breakpoint) {
+					text-align: left;
+				}
+				a {
+					color: $main;
+					&:hover {
+						color: lighten($main,5%);
+					}
+					&:active {
+						color: darken($main,5%);
+					}
+				}
+			}
+		}
+		.mobile-article {
+			border-top: 1px darken($body,10%) solid;
+			display: none;
+			padding: 5% 8% 6%;
+			a {
+				color: $teal;
+				&:hover {
+					color: lighten($teal,5%);
+				}
+				&:active {
+					color: darken($teal,5%);
+				}
+			}
+			@media (max-width: $breakpoint) {
+				display: block;
+			}
+		}
+		.options {
+			background: $teal;
+			padding-bottom: 5%;
+			p {
+				color: $white;
+			}
+		}
+		#story {
+			background: $main;
+			color: $white;
+			padding: 3% 20%;
+			@media (max-width: $breakpoint) {
+				padding: 5% 8%;
+			}
+		}
+		#story-header {
+			padding: 2% 20%;
+			@media (max-width: $breakpoint) {
+				padding: 4% 8%;
+			}
+			h1 a {
+				color: $main;
+				&:hover {
+					color: $teal;
+				}
+				&:active {
+					color: darken($teal,5%);
+				}
+			}
+			#branding, .download {
+				@media (max-width: 960px) {
+					float: none;
+				}
+			}
+			.download {
+				@media (max-width: 960px) {
+					margin: 2% 0;
+				}
+			}
+		}
+
+//  888b     d888  .d88888b.  8888888b.  888     888 888      8888888888 .d8888b.
+//  8888b   d8888 d88P" "Y88b 888  "Y88b 888     888 888      888       d88P  Y88b
+//  88888b.d88888 888     888 888    888 888     888 888      888       Y88b.
+//  888Y88888P888 888     888 888    888 888     888 888      8888888    "Y888b.
+//  888 Y888P 888 888     888 888    888 888     888 888      888           "Y88b.
+//  888  Y8P  888 888     888 888    888 888     888 888      888             "888
+//  888   "   888 Y88b. .d88P 888  .d88P Y88b. .d88P 888      888       Y88b  d88P
+//  888       888  "Y88888P"  8888888P"   "Y88888P"  88888888 8888888888 "Y8888P"
+
+		#branding {
+			float: left;
+			padding: 0;
+			@media (max-width: $breakpoint) {
+				float: none;
+				font-size: 2.7em;
+			}
+		}
+		.codeblock {
+			background: $white;
+			color: $main !important;
+			display: block;
+			margin: 5% 0;
+			padding: 3.5% 4%;
+			@include border-radius(10px);
+		}
+		.download {
+			background: $red;
+			color: $white;
+			padding: 1.5% 3%;
+			@include border-radius(50px);
+			&:hover {
+				background: lighten($red,5%);
+			}
+			&:active {
+				background: darken($red,5%);
+			}
+			@media (max-width: $breakpoint) {
+				padding: 10px 25px;
+			}
+		}
+		.tagline {
+			border-top: 1px darken($body, 10%) solid;
+			clear: both;
+			padding-top: 2%;
+			@media (max-width: $breakpoint) {
+				border-top: none;
+				padding: 0;
+			}
+		}
+
+	// Demo Window
+		.demo {
+			padding: 0 10% 4%;
+			@media (max-width: $breakpoint) {
+				display: none;
+			}
+			#control-hint {
+				margin: 0 auto;
+				p {
+					background: $main;
+					color: $white;
+					margin: 0 auto;
+					padding: 15px 0;
+					position: relative;
+					text-align: center;
+					width: 45%;
+					z-index: 5;
+					@include border-radius(50px);
+				}
+				#hint-triangle {
+					border-bottom: 20px solid $main;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					height: 0;
+					left: 2px;
+					margin: 2% auto 0;
+					position: relative;
+					width: 0;
+					z-index: 2;
+				}
+			}
+			#demo-control {
+				background: $main;
+				cursor: ew-resize;
+				height: 15px;
+				margin: 4% 0 0;
+				position: relative;
+				text-align: left;
+				width: 100%;
+				@include border-radius(8px);
+				.ui-slider-handle {
+					background: $teal;
+					cursor: ew-resize;
+					height: 31px;
+					top: -8px;
+					margin-left: -15px;
+					outline: none;
+					position: absolute;
+					width: 31px;
+					z-index: 2;
+					@include border-radius(50%);
+				}
+			}
+			#demo-wrap {
+				background: $white;
+				height: 400px;
+				margin: 0 auto;
+				overflow: hidden;
+				position: relative;
+				width: 60%;
+				@include border-radius(5px);
+				a {
+					color: $teal;
+					&:hover {
+						color: lighten($teal,5%);
+					}
+					&:active {
+						color: darken($teal,5%);
+					}
+				}
+				.demo-article {
+					height: 327px;
+					margin-top: 73px;
+					overflow: auto;
+					padding: 15px 7% 30px;
+				}
+				#browser-nav,
+				#browser-tools,
+				#browser-top {
+					position: absolute;
+				}
+				#browser-nav,
+				#browser-tools {
+					z-index: 99;
+				}
+				#browser-nav {
+					height: 72px;
+					left: 0;
+					top: 0;
+					width: 180px;
+				}
+				#browser-tools {
+					height: 72px;
+					right: 0;
+					top: 0;
+					width: 37px;
+				}
+				#browser-top {
+					height: 72px;
+					top: 0;
+					width: 100%;
+					z-index: 90;
+				}
+			}
+		}
+
+		// Project List ad
+		// --------------------------------------------------
+		.project-list {
+			background: #d6efff;
+			border-bottom: 1px solid $white;
+			font-family: $sans;
+			text-align: center;
+			display: block;
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+
+			@media (max-width: 800px) {
+			  height: 60px;
+			}
+
+			@media (max-width: 545px) {
+			  padding-left: 105px;
+			  padding-right: 5px;
+			  text-align: left;
+			  padding: 8px 8px 5px 105px;
+			  font-size: 0.95rem;
+			  line-height: 1.1rem;
+			}
+
+			@media (max-width: 450px) {
+			  //padding-left: 5px;
+			  font-size: 0.9rem;
+			  line-height: 1.1rem;
+			  height: auto;
+			  padding: 8px;
+			}
+
+
+			& > * {
+				vertical-align: middle;
+
+				@media (max-width: 800px) {
+			   position: absolute;
+				}
+			}
+
+			p {
+				color: #216b9c;
+				display: inline-block;
+				margin: 0;
+
+				strong {
+					font-weight: bold;
+				}
+
+				@media (max-width: 800px) {
+			  	@include calc(width, "100% - 220px");
+			  	text-align: center;
+			  	left: 105px;
+			  	top: 50%;
+			  	@include transform(translateY(-50%));
+				}
+
+				@media (max-width: 545px) {
+				  position: static;
+				  @include transform(translate(0,0));
+				  width: 100%;
+				  text-align: left;
+				  display: inline;
+				}
+			}
+
+			.button {
+				background: $blue;
+				color: $white;
+				display: inline-block;
+				padding: .5% 1.5%;
+				border-radius: 3rem;
+				margin-left: 1%;
+
+				@media (max-width: 800px) {
+					width: 100px;
+					position: absolute;
+					@include transform(translateY(-50%));
+					top: 50%;
+					right: 10px;
+				}
+
+				@media (max-width: 545px) {
+					background: transparent;
+				  position: static;
+				  @include transform(translateY(0));
+				  padding: 0;
+				  color: $blue;
+				  text-decoration: underline;
+				  margin-left: 5px;
+				  display: inline;
+				  font-weight: bold;
+				}
+			}
+
+			.robot {
+				display: inline-block;
+				position: relative;
+				width: 8%;
+				min-width: 100px;
+				margin: -1rem 0;
+				top: 1rem;
+				-webkit-animation: hover 2s infinite ease;
+				animation: hover 2s infinite ease;
+
+				@media (max-width: 800px) {
+					position: absolute;
+				  left: 10px;
+				  top: 0;
+				  width: 100px;
+				}
+
+				@media (max-width: 545px) {
+				  min-width: 80px;
+				  width: 80px;
+				  top: 1.25rem;
+				}
+
+				@media (max-width: 450px) {
+				  display: none;
+				}
+
+			}
+
+			img {
+				min-width: 100px;
+				max-width: 100%;
+
+				@media (max-width: 545px) {
+				  min-width: 80px;
+				}
+			}
+		}
+
+
+		@keyframes hover {
+			0%, 100% {
+				@include transform(translateY(0));
+			}
+			50% {
+				@include transform(translateY(.5rem));
+			}
+		}
+
+		@-webkit-keyframes hover {
+			0%, 100% {
+				@include transform(translateY(0));
+			}
+			50% {
+				@include transform(translateY(.5rem));
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
